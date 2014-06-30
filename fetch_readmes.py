@@ -8,7 +8,7 @@ RUNME = False
 def fetch_repo_readmes(username):
     resp = requests.get(GITHUB_API_URL + 'users/' + username + '/repos')
     repo_list = resp.json()
-    readmes = []
+    readmes = {}
 
     for repo in repo_list:
         readme_url = GITHUB_API_URL + 'repos/' + repo['full_name'] + '/contents/README.md'
@@ -16,10 +16,8 @@ def fetch_repo_readmes(username):
         readme_json = repo_resp.json()
         if 'content' in readme_json:
             readme_text = base64.b64decode(readme_json['content'])
-            readmes.append(readme_text)
+            readmes[repo['name']] = readme_text
 
-    import pdb
-    pdb.set_trace()
     return readmes
 
 

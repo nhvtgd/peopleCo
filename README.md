@@ -26,3 +26,6 @@ Output:
                   'https://api.github.com/repos/amruthv/Blast-Server',
                   'https://api.github.com/repos/amruthv/DropMixer',
                   'https://api.github.com/repos/amruthv/FindAPath']}}
+                  
+                  
+There is a web interface that currently on grabs user and repo information but easily extendable to the other features.

@@ -4,7 +4,7 @@ firstHalfRepoUrl = 'https://api.github.com/users/'
 secondHalfRepoUrl = '/repos'
 def languagePrefsForUser(userName):
     userUrl = firstHalfRepoUrl + userName + secondHalfRepoUrl
-    r = requests.get(userUrl)
+    r = requests.get(userUrl, auth=('techdraft', 'techdraft1'))
     languageMetrics = {}
     if(r.ok):
         repos = json.loads(r.text or r.content)
@@ -31,7 +31,7 @@ def languagePrefsForUser(userName):
 def extractDetailsForRepo(repoNum, repos):
     repo = repos[repoNum]
     repoLanguagesUrl = repo['languages_url']
-    r = requests.get(repoLanguagesUrl)
+    r = requests.get(repoLanguagesUrl, auth=('techdraft', 'techdraft1'))
     if (r.ok):
         repoLangaugeDetails = json.loads(r.text or r.content)
         return repoLangaugeDetails

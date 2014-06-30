@@ -28,7 +28,6 @@ def languagePrefsForUser(userName):
     return languagePercentages
 
 
-
 def extractDetailsForRepo(repoNum, repos):
     repo = repos[repoNum]
     repoLanguagesUrl = repo['languages_url']

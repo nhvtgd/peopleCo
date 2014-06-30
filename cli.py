@@ -1,7 +1,7 @@
 import sys
 import languageprefs
 
-functions = [languageprefs.languagePrefsForUser]
+functions = [languageprefs.languagePrefsForUser, fetch_readmes.fetch_repo_readmes]
 
 def main():
     userName = sys.argv[1]
@@ -14,7 +14,6 @@ def main():
         else:
             print 'sorry got rate limited'
     print results
-    return results
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

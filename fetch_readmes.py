@@ -18,7 +18,7 @@ def fetch_repo_readmes(username):
             readme_text = base64.b64decode(readme_json['content'])
             readmes[repo['name']] = readme_text
 
-    return readmes
+    return {'readmes':readmes}
 
 
 if RUNME:

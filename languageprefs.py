@@ -24,8 +24,8 @@ def languagePrefsForUser(userName):
     totalAmounts = sum(languageMetrics.values())
     languagePercentages = {}
     for language in languageMetrics:
-        languagePercentages[str(language)] = int(100 * float(languageMetrics[language]) / totalAmounts)
-    return languagePercentages
+        languagePercentages[str(language)] = str(int(100 * float(languageMetrics[language]) / totalAmounts)) + '%'
+    return {'languagePreferences:':languagePercentages}
 
 
 def extractDetailsForRepo(repoNum, repos):

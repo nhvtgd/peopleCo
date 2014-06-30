@@ -15,7 +15,7 @@ def Util(link, grepDic):
         for i in grepDic:
             if i in dict:
                 result[i] = dict[i]
-    return result
+    return {'profile': result}
 
 def grepGitRepo(userName):
     requestAPI = requests.get("https://api.github.com/users/" + userName + "/repos", auth=('techdraft', 'techdraft1'))
@@ -26,7 +26,7 @@ def grepGitRepo(userName):
         for i in dict:
             result.append(i["url"])
     dic["url"] = result
-    return dic
+    return {'repo': dic}
 
 def main(userName):
     print grepProfile("nhvtgd")

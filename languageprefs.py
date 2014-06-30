@@ -20,7 +20,7 @@ def languagePrefsForUser(userName):
                     languageMetrics[language] = currAmount + repoDetails[language]
     else:
         print 'couldnt make user repos requests'
-    print languageMetrics
+        return None
     totalAmounts = sum(languageMetrics.values())
     languagePercentages = {}
     for language in languageMetrics:
